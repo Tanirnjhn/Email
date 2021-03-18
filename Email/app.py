@@ -1,16 +1,10 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 from flask import Flask,render_template,request
 import smtplib
 import details
 app=Flask(__name__)
 @app.route('/')
 def first():
-    return render_template('D:/email.html')
+    return render_template('email.html')
 @app.route('/detail',methods=['GET','POST'])
 def sec():
     if(request.method=='POST'):
@@ -26,7 +20,7 @@ def sec():
         message = 'Subject: {}\n\n{}'.format(sub,msg)
         server.sendmail(details.mail,z,message)
         server.close()
-        return render_template('D:/email.html')
+        return render_template('email.html')
 if __name__=='__main__':
     app.run()      
 
