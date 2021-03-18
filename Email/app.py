@@ -23,10 +23,3 @@ def sec():
         return render_template('email.html')
 if __name__=='__main__':
     app.run()      
-
-
-# In[ ]:
-
-
-
-
